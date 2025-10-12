@@ -3,86 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Henrique</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Tiny5&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Tiny5&display=swap" rel="stylesheet">
-    <script src="./scripts/script.js"></script>
-    <link rel="shortcut icon" type="imagex/svg" href="./assets/img/vectors/portfolio icon.svg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Componentes-reutilizaveis</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <header>
-        <button id="menu-btn" onclick="menushow()">
-            <i class="fa-solid fa-bars"></i>
-            <span>Menu</span>
-        </button>
-        <nav class="small-menu">
-            <a href="#">Estudos de Casos</a>
-            <a href="#">Trabalhos</a>
-            <a href="#">Entre em contato</a>
-        </nav>
-        <nav id="top-menu">
-            <a href="#">Estudos de Casos</a>
-            <a href="#">Trabalhos</a>
-            <a href="#">Entre em contato</a>
-        </nav>
-        <div id="social-medias">
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#"><i class="fa-brands fa-behance"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+<body class="p-6">
+    <h1 class="text-4xl font-bold text-slate-800 mb-6">Personas de Klein Moretti</h1>
+    <main class="grid md:grid-cols-3 gap-6">
+        <div class="bg-slate-100 p-6 rounded-xl shadow-lg flex flex-col focus:ring-2">
+            <img src="images/klein-moretti.jpg" alt="Imagem de Klein Moretti">
+            <h2 class="text-slate-800 text-2xl font-bold mb-6 mt-3">Klein Moretti</h2>
+            <p class="text-justify mb-6 text-slate-600 text-sm">Klein Moretti é o protagonista de Lord of the Mysteries, um jovem historiador inteligente, analítico e extremamente curioso, cuja vida muda drasticamente após participar de um ritual misterioso que o coloca em contato direto com o mundo do ocultismo e do sobrenatural. Inicialmente cético, racional e pragmático, ele precisa aprender a lidar com forças que desafiam toda lógica e compreensão humana, enquanto tenta preservar sua sanidade, sua ética e sua humanidade diante de horrores inimagináveis. Klein é metódico, observador e extremamente prudente, enfrentando cada desafio com paciência, cálculo e reflexão detalhada, mesmo quando cercado por perigos, conspirações e enigmas que poderiam destruir qualquer mente comum. Sua empatia, gentileza e profundo senso de justiça o diferenciam em um universo dominado por ambição, loucura e manipulação. Ao longo de sua jornada, ele cresce de forma notável, evoluindo de um simples estudioso curioso para uma figura poderosa, respeitada e temida, mas ainda guiada por princípios e moralidade. Apesar do peso esmagador de segredos antigos e responsabilidades extraordinárias, Klein permanece humano, equilibrando razão, fé, coragem e determinação, tornando-se um símbolo de perseverança, inteligência e resistência diante do caos absoluto e da insanidade.</p>
+            <button class="focus:ring-5 ring-blue-500 bg-sky-700 text-slate-50 px-4 py-2 rounded-4xl hover:bg-sky-600 hover:scale-[1.05] transition duration-300 cursor-pointer">Conheça mais sobre o personagem</button>
         </div>
-    </header>
-
-    <main>
-        <div id="header-text">
-            <div id="heading-and-subheading">
-                <div id="heading">
-                    <h1>Henrique Gomes</h1>
-                    <h2>UX/UI Designer + Dev Full-Stack</h2>
-                </div>
-                <div id="subheading">
-                    <p>
-                        UX/UI e Full-Stack. Desenho o que faz sentido, desenvolvo o que funciona. 
-                        Do wireframe ao deploy, conecto estética e lógica para entregar produtos completos e sem ruído.
-                    </p>
-                </div>
-            </div>
-
-            <button class="btn-green">
-                <span>Vamos trabalhar juntos</span>
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
+        <div class="bg-slate-100 p-6 rounded-xl shadow-lg flex flex-col ">
+            <img src="images/sherlock-moriarty.jpg" alt="Imagem de Sherlock Moriarty">
+            <h2 class="text-slate-800 text-2xl font-bold mb-6 mt-3">Sherlock Moriarty</h2>
+            <p class="text-justify mb-6 text-slate-600 text-sm">
+                Sherlock Moriarty é a identidade adotada por Klein Moretti, o protagonista de Lord of the Mysteries. Sob esse nome, ele se apresenta como um detetive excêntrico, sempre vestindo terno, cartola e mantendo uma postura elegante e racional. À primeira vista, é um homem culto e perspicaz, com um humor refinado e um olhar que parece decifrar cada detalhe ao seu redor. No entanto, por trás dessa fachada tranquila, esconde-se alguém que lida com segredos insondáveis e forças sobrenaturais além da compreensão humana. Sherlock é uma máscara cuidadosamente construída para proteger Klein enquanto ele explora o ocultismo e ascende pelas Sequências de Beyonders. Seu comportamento calculado e suas palavras medidas disfarçam a constante luta interna entre sanidade e loucura. Carrega um ar de mistério que atrai e intimida, sendo ao mesmo tempo um observador e um jogador do grande teatro do destino. Inteligente, paciente e enigmático, Sherlock Moriarty representa o equilíbrio entre o racional e o arcano, o homem e o mito, o detetive e o ocultista — uma das personas mais marcantes do mundo sombrio e fascinante de Lord of the Mysteries.
+            </p>
+            <button class="focus:ring-5 ring-blue-500 bg-sky-700 text-slate-50 px-4 py-2 rounded-4xl hover:bg-sky-600 hover:scale-[1.05] transition duration-300 cursor-pointer">Conheça mais sobre o personagem</button>
         </div>
-
-        <img src="./assets/img/Photo-henrique.png" alt="Henrique-photo" id="personal-img">
+        <div class="bg-slate-100 p-6 rounded-xl shadow-lg flex flex-col">
+            <img src="images/gehrman-sparrow.jpg" alt="Imagem de Gehrman Sparrow">
+            <h2 class="text-slate-800 text-2xl font-bold mb-6 mt-3">Gehrman Sparrow</h2>
+            <p class="text-justify mb-6 text-slate-600 text-sm">Gehrman Sparrow é uma das identidades adotadas por Klein Moretti em Lord of the Mysteries. Essa persona remonta à sua juventude, quando, como Zhou Mingrui, ele era um estudante universitário comum. Após sua transmigração para o mundo de Backlund, Klein assume o nome Gehrman Sparrow, um aventureiro renomado por sua habilidade em caçar piratas. Essa identidade serve como uma fachada para suas atividades como "O Mundo", uma das figuras mais poderosas e misteriosas da história.
+                Fisicamente, Gehrman é descrito como um homem com óculos de aro dourado, cabelo preto bem arrumado e olhos castanho-escuros. Sua aparência é mais fria e imponente do que a de Klein, refletindo sua nova posição no mundo sobrenatural. Ele é conhecido por sua habilidade em intimidar e por sua presença enigmática, que o torna uma figura temida e respeitada.
+                Embora Gehrman Sparrow seja uma criação de Klein, ele representa uma faceta mais dura e calculista do protagonista. Essa identidade é essencial para suas interações no mundo físico, enquanto outras personas, como "O Bobo", são usadas em contextos mais espirituais e divinos. Assim, Gehrman Sparrow é uma das muitas camadas que compõem a complexa personalidade de Klein Moretti.</p>
+            <button class="focus:ring-5 ring-blue-500 bg-sky-700 text-slate-50 px-4 py-2 rounded-4xl hover:bg-sky-600 hover:scale-[1.05] transition duration-300 cursor-pointer">Conheça mais sobre o personagem</button>
+        </div>
     </main>
-
-    <footer>
-        <h3>Trabalhou em:</h3>
-        <div id="cont">
-            <div id="clients-logos">
-                <div class="logo">
-                    <img src="./assets/img/clients-logos/Dados-livres.svg" alt="Dados-livres-logo">
-                </div>
-                <div class="logo">
-                    <img src="./assets/img/clients-logos/Atelie-web.svg" alt="Atelie-web-logo">
-                </div>
-                <div class="logo">
-                    <img src="./assets/img/clients-logos/Vetor.svg" alt="Vetor-logo">
-                </div>
-                <div class="logo">
-                    <img src="./assets/img/clients-logos/Semente.svg" alt="Semente-logo">
-                </div>
-            </div>
-
-        </div>
-    </footer>
-
-    
+    <!-- Esse tipo de card pode ser usado em diversos casos, como sites de compra online, ou no caso desse em uma wiki/site de fâs de uma obra -->
 </body>
 </html>
