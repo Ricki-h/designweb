@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landingpage - Versão 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="font-['Inter']">
+    <header class="container mx-auto flex justify-between items-center py-8">
+        <a href="index.html">
+            <img src="assets/vectors/Logo.svg" alt="Logo Company">
+        </a>
+        <nav>
+            <menu class="flex gap-14 text-[#667085] items-center">
+                <li><a href="#hero" class="hover:text-[#182230] transition duration-200">Hero Banner</a></li>
+                <li><a href="#brands" class="hover:text-[#182230] transition duration-200">Brands</a></li>  
+                <li><a href="#functions" class="hover:text-[#182230] transition duration-200">Functions</a></li>
+                <li><a href="#metrics" class="hover:text-[#182230] transition duration-200">Métricas</a></li>
+                <li><button class="bg-[#182230] px-8 py-3 rounded-xl text-white hover:cursor-pointer hover:scale-[1.02] transition duration-300">Button</button></li>
+            </menu>
+        </nav>
+    </header>
+
+    <main class="container mx-auto">
+        <!-- Hero banner -->
+        <section id="hero" class="bg-[#F2F4F7] flex flex-col items-center justify-center py-15 gap-10 rounded-2xl mb-16">
+            <h1 class="text-6xl text-[#182230] font-semibold max-w-140 text-center">Exemplo de copy para seu projeto</h1>
+            <h4 class="text-lg text-[#667085] max-w-140 text-center">Agora você pode construir rapidamente seus textos incríveis com esses blocos, elementos e seções prontos para uso.</h4>
+            <div class=" flex gap-6 max-w-140">
+                <button class="px-14 py-5 bg-[#182230] text-white rounded-xl hover:cursor-pointer hover:scale-[1.02] transition duration-300">Button</button> 
+                <button class="px-14 py-5 border-1 border-[#182230] text-[#182230] rounded-xl hover:cursor-pointer hover:scale-[1.02] transition duration-300">Button</button>
+            </div>
+        </section>
+
+        <!-- Brands -->
+         <section id="brands" class="flex justify-between items-center mb-16">
+            <img src="assets/vectors/Brand Icon-6.png" alt="Logo Nasa">
+            <img src="assets/vectors/Brand Icon-5.png" alt="Logo Spotify">
+            <img src="assets/vectors/Brand Icon-4.png" alt="Logo Google">
+            <img src="assets/vectors/Brand Icon-3.png" alt="Logo Facebook">
+            <img src="assets/vectors/Brand Icon-2.png" alt="Logo Instagram">
+            <img src="assets/vectors/Brand Icon-1.png" alt="Logo Microsoft">
+            <img src="assets/vectors/Brand Icon.png" alt="Logo Drpbox">
+         </section>
+
+         <!-- Functions -->
+          <section id="functions">
+            <div class="flex justify-between">
+                <div class="flex gap-3 items-baseline max-w-86">
+                    <i class="fa-solid fa-chevron-right text-[#0C111D]"></i>
+                    <div>
+                        <p class="text-xl font-semibold text-[#0C111D]">Essa é a primeira funcinalidade</p>
+                        <p class="text-xl text-[#667085]">Lorem ipsum dolor sit amet. Risus ultricies tristique.</p>
+                    </div>
+                </div>
+                <div class="flex gap-3 items-baseline max-w-86">
+                    <i class="fa-solid fa-chevron-right text-[#0C111D]"></i>
+                    <div>
+                        <p class="text-xl font-semibold text-[#0C111D]">Essa é a segunda funcinalidade</p>
+                        <p class="text-xl text-[#667085]">Lorem ipsum dolor sit amet. Risus ultricies tristique.</p>
+                    </div>
+                </div>
+                <div class="flex gap-3 items-baseline max-w-86">
+                    <i class="fa-solid fa-chevron-right text-[#0C111D]"></i>
+                    <div>
+                        <p class="text-xl font-semibold text-[#667085] hover:text-[#0C111D]">Essa é a terceira funcinalidade</p>
+                        <p class="text-xl text-[#667085]">Lorem ipsum dolor sit amet. Risus ultricies tristique.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                
+            </div>
+          </section>
+
+           <!-- Métricas -->
+            <section id="metrics">
+                <h1>Essa é uma seção de métricas</h1>
+                <h4>Agora você pode construir rapidamente seus textos incríveis com esses blocos, elementos e seções prontos para uso.</h4>
+                <!-- Números -->
+                <div>
+                    <div>
+                        <h1>234+</h1>
+                        <h4>Primeiro número</h4>
+                    </div>
+                    <div>
+                        <h1>38,903+</h1>
+                        <h4>Segundo número</h4>
+                    </div>
+                    <div>
+                        <h1>154+</h1>
+                        <h4>Terceiro número</h4>
+                    </div>
+                </div>
+            </section>
+    </main>
+</body>
+</html>
