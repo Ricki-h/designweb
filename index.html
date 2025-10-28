@@ -3,101 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landingpage - Versão 1</title>
+    <title>Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="font-['Inter']">
-    <header class="container mx-auto flex justify-between items-center py-8">
-        <a href="index.html">
-            <img src="assets/vectors/Logo.svg" alt="Logo Company">
-        </a>
-        <nav>
-            <menu class="flex gap-14 text-[#667085] items-center">
-                <li><a href="#hero" class="hover:text-[#182230] transition duration-200">Sobre</a></li>
-                <li><a href="#brands" class="hover:text-[#182230] transition duration-200">Professores</a></li>  
-                <li><a href="#functions" class="hover:text-[#182230] transition duration-200">Alunos</a></li>
-                <li><a href="#metrics" class="hover:text-[#182230] transition duration-200">Projetos</a></li>
-                <li><button class="bg-sky-700    px-8 py-3 rounded-xl font-semibold text-white hover:cursor-pointer hover:scale-[1.02] transition duration-300">Documentos</button></li>
-            </menu>
-        </nav>
-    </header>
-
-    <main class="container mx-auto">
-        <!-- Hero banner -->
-        <section id="hero" class="bg-[#F2F4F7] flex flex-col items-center justify-center py-15 gap-10 rounded-2xl mb-16">
-            <h1 class="text-5xl text-sky-700 font-semibold max-w-140 text-center">Depois de muita espera, ela finalmente chegou!</h1>
-            <h4 class="text-lg text-[#667085] max-w-140 text-center">O formulário para aquisição da camisa está oficialmente aberto! Com um design original e dois modelos únicos, você vai poder mostrar todo o seu orgulho de fazer parte dessa turma incrível!</h4>
-            <div class=" flex gap-6">
-                <button class="px-14 py-5 bg-sky-700 font-semibold text-white rounded-xl hover:cursor-pointer hover:scale-[1.02] transition duration-300">Ser feliz agora</button> 
-                <button class="px-14 py-5 border-1 border-sky-700 font-semibold text-sky-700 rounded-xl hover:cursor-pointer hover:scale-[1.02] transition duration-300">Button</button>
-            </div>
+<body>
+    <main class="p-10 max-w-[1024px]">
+        <section class="mb-10">
+            <img src="assets/imgs/banner.png" alt="Banner" class="w-full">
         </section>
 
-        <!-- Brands -->
-         <section id="brands" class="flex justify-between items-center mb-16">
-            <img src="assets/vectors/Brand Icon-6.png" alt="Logo Nasa">
-            <img src="assets/vectors/Brand Icon-5.png" alt="Logo Spotify">
-            <img src="assets/vectors/Brand Icon-4.png" alt="Logo Google">
-            <img src="assets/vectors/Brand Icon-3.png" alt="Logo Facebook">
-            <img src="assets/vectors/Brand Icon-2.png" alt="Logo Instagram">
-            <img src="assets/vectors/Brand Icon-1.png" alt="Logo Microsoft">
-            <img src="assets/vectors/Brand Icon.png" alt="Logo Drpbox">
-         </section>
+        <section class="flex flex-col gap-6">
+            <h2 class="font-semibold text-xl">Compre pontos e distribua como quiser</h2>
 
-         <!-- Functions -->
-          <section id="functions" class="mb-16">
-            <div class="grid grid-cols-3 justify-between gap-20 mb-16">
-                <div class="flex gap-8 items-baseline px-2 pb-12 group hover:cursor-pointer border-b-2 border-[#EAECF0] hover:border-sky-700 transition duration-300">
-                    <i class="fa-solid fa-chevron-right text-[#667085] group-hover:text-sky-700"></i>
-                    <div>
-                        <p class="text-xl font-semibold text-[#667085] group-hover:text-sky-700 transition duration-300">Ela é bonita</p>
-                        <p class="text-xl text-[#667085]">Além de linda ela é a mais top!</p>
+            <div class="grid grid-cols-3 gap-8">
+                <div class="border-1 dorder-[#CCCCCC] flex flex-col p-6 gap-4 rounded-lg">
+                    <img src="assets/imgs/design-de-app.png" alt="Design de App">
+
+                    <div class="gap-4 flex flex-col h-full justify-between">
+                        <p class="text-sm text-[#808080]">Desenvolvimento, consultoria ou UX/UI para seus projetos decolarem.</p>
+                        <div class="gap-4 flex flex-col">
+                            <a href="#" class="font-bold flex justify-between items-center">
+                                <span>Comprar créditos</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                            <p class="text-sm text-[#808080]">5 créditos por R$10.000,00</p>
+                        </div>
                     </div>
                 </div>
-                <div class="flex gap-8 items-baseline px-2 pb-12 group hover:cursor-pointer border-b-2 border-[#EAECF0] hover:border-sky-700 transition duration-300">
-                    <i class="fa-solid fa-chevron-right text-[#667085] group-hover:text-sky-700"></i>
-                    <div>
-                        <p class="text-xl font-semibold text-[#667085] group-hover:text-sky-700 transition duration-300">O azul destaque</p>
-                        <p class="text-xl text-[#667085]">O azul royal ficou para trás. Contemple o novo azul esmeralda!</p>
+                <div class="border-1 dorder-[#CCCCCC] flex flex-col p-6 gap-4 rounded-lg">
+                    <img src="assets/imgs/sistemas-pvd.png" alt="Design de App">
+
+                    <div class="gap-4 flex flex-col h-full justify-between">
+                        <p class="text-sm text-[#808080]">Desenvolvimento de projeto de ponta a ponta, com nível de complexidade média com super desconto.</p>
+                        <div class="gap-4 flex flex-col">
+                            <a href="#" class="font-bold flex justify-between items-center">
+                                <span>Comprar créditos</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                            <p class="text-sm text-[#808080]">21 créditos por R$120.000,00</p>
+                        </div>
                     </div>
                 </div>
-                <div class="flex gap-8 items-baseline px-2 pb-12 group hover:cursor-pointer border-b-2 border-[#EAECF0] hover:border-sky-700 transition duration-300">
-                    <i class="fa-solid fa-chevron-right text-[#667085] group-hover:text-sky-700"></i>
-                    <div>
-                        <p class="text-xl font-semibold text-[#667085] group-hover:text-sky-700 transition duration-300">Webeti!</p>
-                        <p class="text-xl text-[#667085]">O nosso mascote é um gênio da informática!</p>
+                <div class="border-1 dorder-[#CCCCCC] flex flex-col p-6 gap-4 rounded-lg">
+                    <img src="assets/imgs/sites-wordpress.png" alt="Design de App">
+
+                    <div class="gap-4 flex flex-col h-full justify-between">
+                        <p class="text-sm text-[#808080]">Descontos cumulativos para projetos em Wordpress para 2025.</p>
+                        <div class="gap-4 flex flex-col">
+                            <a href="#" class="font-bold flex justify-between items-center">
+                                <span>Comprar créditos</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                            <p class="text-sm text-[#808080]">21 créditos por R$12.000,00</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="rounded-2xl">
-                <img src="assets/imgs/camisas.png" alt="camisas" class="w-full">
-            </div>
-          </section>
-
-           <!-- Métricas -->
-            <section id="metrics" class="flex flex-col gap-12 items-center pb-27">
-                <div class="flex flex-col gap-6 items-center">
-                    <h1 class="text-5xl font-semibold text-sky-700">Alunos que já compraram.</h1>
-                    <h4 class="text-xl text-[#667085] text-center max-w-155">Junte-se aos milhares de alunos de info que já estão vestindo a nossa camiseta linda e maravilhosa.</h4>
-                </div>
-                <!-- Números -->
-                <div class="flex justify-between w-full px-36">
-                    <div class="text-center">
-                        <h1 class="text-sky-700 text-5xl font-semibold">234+</h1>
-                        <h4 class="text-lg text-[#667085]">Primeiro número</h4>
-                    </div>
-                    <div class="text-center">
-                        <h1 class="text-sky-700 text-5xl font-semibold">38,903+</h1>
-                        <h4 class="text-lg text-[#667085]">Segundo número</h4>
-                    </div>
-                    <div class="text-center">
-                        <h1 class="text-sky-700 text-5xl font-semibold">154+</h1>
-                        <h4 class="text-lg text-[#667085]">Terceiro número</h4>
-                    </div>
-                </div>
-            </section>
+        </section>
     </main>
+
+    <footer class="flex justify-end py-4 px-14 border-t-1 border-[#CCCCCC] absolute bottom-0 w-full">
+        <img src="assets/vectors/logo-agencia.svg" alt="logo">
+    </footer>
 </body>
 </html>
