@@ -4,67 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <main class="p-10 max-w-[1024px]">
-        <section class="mb-10">
-            <img src="assets/imgs/banner.png" alt="Banner" class="w-full">
-        </section>
-
-        <section class="flex flex-col gap-6">
-            <h2 class="font-semibold text-xl">Compre pontos e distribua como quiser</h2>
-
-            <div class="grid grid-cols-3 gap-8">
-                <div class="border-1 dorder-[#CCCCCC] flex flex-col p-6 gap-4 rounded-lg">
-                    <img src="assets/imgs/design-de-app.png" alt="Design de App">
-
-                    <div class="gap-4 flex flex-col h-full justify-between">
-                        <p class="text-sm text-[#808080]">Desenvolvimento, consultoria ou UX/UI para seus projetos decolarem.</p>
-                        <div class="gap-4 flex flex-col">
-                            <a href="#" class="font-bold flex justify-between items-center">
-                                <span>Comprar créditos</span>
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </a>
-                            <p class="text-sm text-[#808080]">5 créditos por R$10.000,00</p>
-                        </div>
+<body class="font-['Sora']">
+    <header class="px-8 py-4 bg-[#F6F6F6] border-b-1 border-[#CCCCCC]">
+        <div class="max-w-360 mx-auto flex justify-between">
+            <a href="#">
+                <img src="assets/vectors/logo-agencia-maior.svg" alt="logo">
+            </a>
+            <a href="#">
+                <div class="flex gap-2 items-center">
+                    <img src="assets/imgs/user-icon.png" alt="user icon">
+                    <div class="">
+                        <h6 class="text-xs font-bold">John Doe</h6>
+                        <p class="text-[#808080] text-xs">Agência Web</p>
                     </div>
                 </div>
-                <div class="border-1 dorder-[#CCCCCC] flex flex-col p-6 gap-4 rounded-lg">
-                    <img src="assets/imgs/sistemas-pvd.png" alt="Design de App">
+            </a>
+        </div>
+    </header>
 
-                    <div class="gap-4 flex flex-col h-full justify-between">
-                        <p class="text-sm text-[#808080]">Desenvolvimento de projeto de ponta a ponta, com nível de complexidade média com super desconto.</p>
-                        <div class="gap-4 flex flex-col">
-                            <a href="#" class="font-bold flex justify-between items-center">
-                                <span>Comprar créditos</span>
-                                <i class="fa-solid fa-chevron-right"></i>
+    <main class="relative">
+        <div class="max-w-360 mx-auto grid grid-cols-[280px_1fr] min-h-screen">
+            <aside class="w-70 flex flex-col gap-8 p-8 border-r-1 border-[#CCCCCC] bg-white z-1">
+                <h1 class="text-[#4F4F4F] font-semibold text-2xl text-center">Canal do cliente</h1>
+                <div class="flex flex-col gap-4">
+                    <details class="collapse text-sm" name="my-accordion-det-1" open>
+                        <summary class="collapse-title font-semibold flex items-center gap-2">
+                            <img src="assets/vectors/loja.svg" alt="loja icon">
+                            <span class="font-bold">Loja de projetos</span>
+                        </summary>
+                        <div class="collapse-content text-sm relative left-8 flex flex-col gap-2">
+                            <a href="#" class="text-[#104F98] font-bold">
+                                Dashboard
                             </a>
-                            <p class="text-sm text-[#808080]">21 créditos por R$120.000,00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-1 dorder-[#CCCCCC] flex flex-col p-6 gap-4 rounded-lg">
-                    <img src="assets/imgs/sites-wordpress.png" alt="Design de App">
-
-                    <div class="gap-4 flex flex-col h-full justify-between">
-                        <p class="text-sm text-[#808080]">Descontos cumulativos para projetos em Wordpress para 2025.</p>
-                        <div class="gap-4 flex flex-col">
-                            <a href="#" class="font-bold flex justify-between items-center">
-                                <span>Comprar créditos</span>
-                                <i class="fa-solid fa-chevron-right"></i>
+                            <a href="concluidos.html" class="text-[#828282] hover:text-[#104F98]">
+                                Concluídos
                             </a>
-                            <p class="text-sm text-[#808080]">21 créditos por R$12.000,00</p>
                         </div>
-                    </div>
+                    </details>
+                    <details class="collapse text-sm" name="my-accordion-det-1" false>
+                        <summary class="collapse-title font-semibold flex items-center gap-2">
+                            <img src="assets/vectors/pizza-graph.svg" alt="loja icon">
+                            <span>Gestão de projetos</span>
+                        </summary>
+                        <div class="collapse-content text-sm relative left-8 flex flex-col gap-2">
+                            <a href="#" class="text-[#828282] hover:text-[#104F98]">
+                                Lorem
+                            </a>
+                            <a href="concluidos.html" class="text-[#828282] hover:text-[#104F98]">
+                                Impsum
+                            </a>
+                            <a href="concluidos.html" class="text-[#828282] hover:text-[#104F98]">
+                                Dolor
+                            </a>
+                        </div>
+                    </details>
+                    <details class="collapse text-sm" name="my-accordion-det-1" false>
+                        <summary class="collapse-title font-semibold flex items-center gap-2">
+                            <img src="assets/vectors/megafone.svg" alt="loja icon">
+                            <span>Campanhas</span>
+                        </summary>
+                        <div class="collapse-content text-sm relative left-8 flex flex-col gap-2">
+                            <a href="#" class="text-[#828282] hover:text-[#104F98]">
+                                Lorem
+                            </a>
+                            <a href="concluidos.html" class="text-[#828282] hover:text-[#104F98]">
+                                Impsum
+                            </a>
+                        </div>
+                    </details>
                 </div>
+            </aside>
+            <div class="">
+                <div class="p-10 max-w-[1024px]">
+                    <section class="mb-10">
+                        <img src="assets/imgs/banner.png" alt="Banner" class="w-full">
+                    </section>
+            
+                    <section class="flex flex-col gap-6">
+                        <h2 class="font-semibold text-xl">Compre pontos e distribua como quiser</h2>
+            
+                        <div class="grid grid-cols-3 gap-8">
+                            <div class="border-1 dorder-[#CCCCCC] flex flex-col p-6 gap-4 rounded-lg">
+                                <img src="assets/imgs/design-de-app.png" alt="Design de App">
+            
+                                <div class="gap-4 flex flex-col h-full justify-between">
+                                    <p class="text-sm text-[#808080]">Desenvolvimento, consultoria ou UX/UI para seus projetos decolarem.</p>
+                                    <div class="gap-4 flex flex-col">
+                                        <a href="#" class="font-bold flex justify-between items-center">
+                                            <span>Comprar créditos</span>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </a>
+                                        <p class="text-sm text-[#808080]">5 créditos por R$10.000,00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-1 dorder-[#CCCCCC] flex flex-col p-6 gap-4 rounded-lg">
+                                <img src="assets/imgs/sistemas-pvd.png" alt="Design de App">
+            
+                                <div class="gap-4 flex flex-col h-full justify-between">
+                                    <p class="text-sm text-[#808080]">Desenvolvimento de projeto de ponta a ponta, com nível de complexidade média com super desconto.</p>
+                                    <div class="gap-4 flex flex-col">
+                                        <a href="#" class="font-bold flex justify-between items-center">
+                                            <span>Comprar créditos</span>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </a>
+                                        <p class="text-sm text-[#808080]">21 créditos por R$120.000,00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-1 dorder-[#CCCCCC] flex flex-col p-6 gap-4 rounded-lg">
+                                <img src="assets/imgs/sites-wordpress.png" alt="Design de App">
+            
+                                <div class="gap-4 flex flex-col h-full justify-between">
+                                    <p class="text-sm text-[#808080]">Descontos cumulativos para projetos em Wordpress para 2025.</p>
+                                    <div class="gap-4 flex flex-col">
+                                        <a href="#" class="font-bold flex justify-between items-center">
+                                            <span>Comprar créditos</span>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </a>
+                                        <p class="text-sm text-[#808080]">21 créditos por R$12.000,00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+        
+                </div>
+                
             </div>
-        </section>
-    </main>
 
-    <footer class="flex justify-end py-4 px-14 border-t-1 border-[#CCCCCC] absolute bottom-0 w-full">
-        <img src="assets/vectors/logo-agencia.svg" alt="logo">
+        </div>
+        
+    </main>
+    <footer class="flex justify-center fixed bottom-0 w-full">
+        <div class="max-w-360 flex justify-end w-full py-4 px-14 border-t-1 border-[#CCCCCC]">
+            <img src="assets/vectors/logo-agencia.svg" alt="logo">
+        </div>
     </footer>
 </body>
 </html>
