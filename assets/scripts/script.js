@@ -9,10 +9,13 @@ const btn_minus = document.getElementById('minus-btn')
 const btn_plus = document.getElementById('plus-btn')
 
 function alt_cred (value) {
-    if (credits >= 100 & credits < 2000) {
+    if (credits >= 100 & credits <= 2000) {
         credits += value
         if (credits < 100) {
             credits = 100
+        }
+        if (credits < 2000) {
+            credits = 2000
         }
     }
     element_cred.innerText = credits.toString()
