@@ -4,39 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landingpage - Versão 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="font-['Inter']">
-    <header class="container mx-auto flex justify-between items-center py-8">
+    <header class="navbar py-8 container mx-auto px-0 justify-between px-5 items-center">
         <a href="index.html">
-            <img src="assets/vectors/Logo.svg" alt="Logo Company">
+            <img src="assets/vectors/Logo.svg" alt="Logo Company" class="max-w-40">
         </a>
-        <nav>
-            <menu class="flex gap-14 text-[#667085] items-center">
-                <li><a href="#hero" class="hover:text-[#182230] transition duration-200">Sobre</a></li>
-                <li><a href="#brands" class="hover:text-[#182230] transition duration-200">Professores</a></li>  
-                <li><a href="#functions" class="hover:text-[#182230] transition duration-200">Alunos</a></li>
-                <li><a href="#metrics" class="hover:text-[#182230] transition duration-200">Projetos</a></li>
-                <li><button class="bg-sky-700    px-8 py-3 rounded-xl font-semibold text-white hover:cursor-pointer hover:scale-[1.02] transition duration-300">Documentos</button></li>
-            </menu>
-        </nav>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1 gap-9 text-base items-center hidden md:flex">
+                <li><a href="#hero">Sobre</a></li>
+                <li><a href="#brands">Professores</a></li>  
+                <li><a href="#functions">Alunos</a></li>
+                <li><a href="#metrics">Projetos</a></li>
+                <label class="toggle text-base-content">
+                    <input type="checkbox" value="dark" class="theme-controller" />
+                  
+                    <svg aria-label="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></g></svg>
+                  
+                    <svg aria-label="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></g></svg>
+                  
+                  </label>
+                <button class="btn bg-sky-600 px-8 py-6 rounded-xl text-white hover:scale-[1.02] transition duration-300 text-base">Documentos</button>
+            </ul>
+        </div>
+        <div class="drawer drawer-end md:hidden">
+            <input id="my-drawer-5" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content flex justify-end">
+              <!-- Page content here -->
+              <label for="my-drawer-5" class="drawer-button btn bg-transparent border-none shadow-none text-2xl"><i class="fa-solid fa-bars"></i></label>
+            </div>
+            <div class="drawer-side">
+              <label for="my-drawer-5" aria-label="close sidebar" class="drawer-overlay"></label>
+              <ul class="menu bg-base-200 min-h-full w-65 p-4 gap-4">
+                <!-- Sidebar content here -->
+                <li><a href="#hero">Sobre</a></li>
+                <li><a href="#brands">Professores</a></li>  
+                <li><a href="#functions">Alunos</a></li>
+                <li><a href="#metrics">Projetos</a></li>
+                <div class="flex gap-4">
+                    <label class="swap swap-rotate">
+                        <!-- this hidden checkbox controls the state -->
+                        <input type="checkbox" class="theme-controller" value="dark" />
+                      
+                        <!-- sun icon -->
+                        <svg
+                          class="swap-off h-10 w-10 fill-current"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24">
+                          <path
+                            d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                        </svg>
+                      
+                        <!-- moon icon -->
+                        <svg
+                          class="swap-on h-10 w-10 fill-current"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24">
+                          <path
+                            d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                        </svg>
+                      </label>
+                    <button class="btn bg-sky-600 px-8 py-6 rounded-xl text-white hover:scale-[1.02] transition duration-300 text-base">Documentos</button>
+                </div>
+              </ul>
+            </div>
+          </div>
     </header>
 
-    <main class="container mx-auto">
+
+    <main class="container mx-auto overflow-x-hidden">
         <!-- Hero banner -->
-        <section id="hero" class="bg-[#F2F4F7] flex flex-col items-center justify-center py-15 gap-10 rounded-2xl mb-16">
-            <h1 class="text-5xl text-sky-700 font-semibold max-w-140 text-center">Depois de muita espera, ela finalmente chegou!</h1>
-            <h4 class="text-lg text-[#667085] max-w-140 text-center">O formulário para aquisição da camisa está oficialmente aberto! Com um design original e dois modelos únicos, você vai poder mostrar todo o seu orgulho de fazer parte dessa turma incrível!</h4>
-            <div class=" flex gap-6">
-                <button class="px-14 py-5 bg-sky-700 font-semibold text-white rounded-xl hover:cursor-pointer hover:scale-[1.02] transition duration-300">Ser feliz agora</button> 
-                <button class="px-14 py-5 border-1 border-sky-700 font-semibold text-sky-700 rounded-xl hover:cursor-pointer hover:scale-[1.02] transition duration-300">Button</button>
+        <section class="hero bg-base-300 mb-16 py-15 md:rounded-2xl">
+            <div class="hero-content text-center">
+              <div class="max-w-xl gap-10 flex flex-col">
+                <h1 class="text-5xl text-sky-600 font-semibold">Depois de muita espera, ela finalmente chegou!</h1>
+                <h4 class="text-lg text-[#667085] max-w-140 text-center">O formulário para aquisição da camisa está oficialmente aberto! Com um design original e dois modelos únicos, você vai poder mostrar todo o seu orgulho de fazer parte dessa turma incrível!</h4>
+                <div class="flex justify-center gap-6">
+                    <button class="btn md:text-base flex md:px-14 md:py-8 p-6 bg-sky-600 text-white rounded-xl hover:cursor-pointer hover:scale-[1.02] transition duration-300">Ser feliz agora</button>
+                    <button class="btn bg-transparent md:text-base flex md:px-14 md:py-8 p-6 border-sky-600 text-sky-600 rounded-xl hover:cursor-pointer hover:scale-[1.02] transition duration-300">Button</button>
+                </div>
+              </div>
             </div>
         </section>
 
         <!-- Brands -->
-         <section id="brands" class="flex justify-between items-center mb-16">
+         <section id="brands" class="flex md:justify-between gap-20 items-center mb-16 px-5 overflow-x-scroll">
             <img src="assets/vectors/Brand Icon-6.png" alt="Logo Nasa">
             <img src="assets/vectors/Brand Icon-5.png" alt="Logo Spotify">
             <img src="assets/vectors/Brand Icon-4.png" alt="Logo Google">
@@ -47,53 +103,102 @@
          </section>
 
          <!-- Functions -->
-          <section id="functions" class="mb-16">
-            <div class="grid grid-cols-3 justify-between gap-20 mb-16">
-                <div class="flex gap-8 items-baseline px-2 pb-12 group hover:cursor-pointer border-b-2 border-[#EAECF0] hover:border-sky-700 transition duration-300">
-                    <i class="fa-solid fa-chevron-right text-[#667085] group-hover:text-sky-700"></i>
-                    <div>
-                        <p class="text-xl font-semibold text-[#667085] group-hover:text-sky-700 transition duration-300">Ela é bonita</p>
-                        <p class="text-xl text-[#667085]">Além de linda ela é a mais top!</p>
+         <section id="functions" class="mb-16">
+            <div class="grid md:grid-cols-3 justify-between gap-20 mb-16 items-center grid-rows-3">
+                <a href="#" class="hover-3d cursor-pointer group">
+      
+                    <!-- content -->
+                    <div class="card bg-base-100 text-white">
+                        <div class="flex gap-8 items-baseline px-2 py-4 pb-12 group hover:cursor-pointer border-b-2 border-[#EAECF0] transition duration-300">
+                            <i class="fa-solid fa-chevron-right text-[#667085] group-hover:text-sky-600"></i>
+                            <div>
+                                <p class="text-xl font-semibold text-[#667085] group-hover:text-sky-600 transition duration-300">Ela é bonita</p>
+                                <p class="text-xl text-[#667085]">Além de linda ela é a mais top!</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="flex gap-8 items-baseline px-2 pb-12 group hover:cursor-pointer border-b-2 border-[#EAECF0] hover:border-sky-700 transition duration-300">
-                    <i class="fa-solid fa-chevron-right text-[#667085] group-hover:text-sky-700"></i>
-                    <div>
-                        <p class="text-xl font-semibold text-[#667085] group-hover:text-sky-700 transition duration-300">O azul destaque</p>
+                    
+                    <!-- 8 empty divs needed for the 3D effect -->
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </a>
+                <a href="#" class="hover-3d cursor-pointer group">
+      
+                    <!-- content -->
+                    <div class="card bg-base-100 text-white">
+                        <div class="flex gap-8 items-baseline px-2 py-4 pb-12 group hover:cursor-pointer border-b-2 border-[#EAECF0] transition duration-300">
+                            <i class="fa-solid fa-chevron-right text-[#667085] group-hover:text-sky-600"></i>
+                            <div>
+                                <p class="text-xl font-semibold text-[#667085] group-hover:text-sky-600 transition duration-300">O azul destaque</p>
                         <p class="text-xl text-[#667085]">O azul royal ficou para trás. Contemple o novo azul esmeralda!</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="flex gap-8 items-baseline px-2 pb-12 group hover:cursor-pointer border-b-2 border-[#EAECF0] hover:border-sky-700 transition duration-300">
-                    <i class="fa-solid fa-chevron-right text-[#667085] group-hover:text-sky-700"></i>
-                    <div>
-                        <p class="text-xl font-semibold text-[#667085] group-hover:text-sky-700 transition duration-300">Webeti!</p>
-                        <p class="text-xl text-[#667085]">O nosso mascote é um gênio da informática!</p>
+                    
+                    <!-- 8 empty divs needed for the 3D effect -->
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </a>
+                <a href="#" class="hover-3d cursor-pointer group">
+      
+                    <!-- content -->
+                    <div class="card bg-base-100 text-white">
+                        <div class="flex gap-8 items-baseline px-2 py-4 pb-12 group hover:cursor-pointer border-b-2 border-[#EAECF0] transition duration-300">
+                            <i class="fa-solid fa-chevron-right text-[#667085] group-hover:text-sky-600"></i>
+                            <div>
+                                <p class="text-xl font-semibold text-[#667085] group-hover:text-sky-600 transition duration-300">Webeti!</p>
+                                <p class="text-xl text-[#667085]">O nosso mascote é um gênio da informática!</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    
+                    <!-- 8 empty divs needed for the 3D effect -->
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </a>
             </div>
+
             <div class="rounded-2xl">
                 <img src="assets/imgs/camisas.png" alt="camisas" class="w-full">
             </div>
-          </section>
+         </section>
 
            <!-- Métricas -->
             <section id="metrics" class="flex flex-col gap-12 items-center pb-27">
                 <div class="flex flex-col gap-6 items-center">
-                    <h1 class="text-5xl font-semibold text-sky-700">Alunos que já compraram.</h1>
+                    <h1 class="text-5xl font-semibold text-sky-600">Alunos que já compraram.</h1>
                     <h4 class="text-xl text-[#667085] text-center max-w-155">Junte-se aos milhares de alunos de info que já estão vestindo a nossa camiseta linda e maravilhosa.</h4>
                 </div>
                 <!-- Números -->
                 <div class="flex justify-between w-full px-36">
                     <div class="text-center">
-                        <h1 class="text-sky-700 text-5xl font-semibold">234+</h1>
+                        <h1 class="text-sky-600 text-5xl font-semibold">234+</h1>
                         <h4 class="text-lg text-[#667085]">Primeiro número</h4>
                     </div>
                     <div class="text-center">
-                        <h1 class="text-sky-700 text-5xl font-semibold">38,903+</h1>
+                        <h1 class="text-sky-600 text-5xl font-semibold">38,903+</h1>
                         <h4 class="text-lg text-[#667085]">Segundo número</h4>
                     </div>
                     <div class="text-center">
-                        <h1 class="text-sky-700 text-5xl font-semibold">154+</h1>
+                        <h1 class="text-sky-600 text-5xl font-semibold">154+</h1>
                         <h4 class="text-lg text-[#667085]">Terceiro número</h4>
                     </div>
                 </div>
