@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="font-['Inter']">
-    <header class="navbar py-8 container mx-auto px-0 justify-between px-5 items-center">
+    <header class="navbar py-8 container mx-auto lg:px-0 justify-between px-5 items-center">
         <a href="index.html">
             <img src="assets/vectors/Logo.svg" alt="Logo Company" class="max-w-40">
         </a>
         <div class="flex-none">
-            <ul class="menu menu-horizontal px-1 gap-9 text-base items-center hidden md:flex">
+            <ul class="menu menu-horizontal px-1 gap-9 text-base items-center hidden lg:flex">
                 <li><a href="#hero">Sobre</a></li>
                 <li><a href="#brands">Professores</a></li>  
                 <li><a href="#functions">Alunos</a></li>
@@ -31,7 +31,7 @@
                 <button class="btn bg-sky-600 px-8 py-6 rounded-xl text-white hover:scale-[1.02] transition duration-300 text-base">Documentos</button>
             </ul>
         </div>
-        <div class="drawer drawer-end md:hidden">
+        <div class="drawer drawer-end lg:hidden">
             <input id="my-drawer-5" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex justify-end">
               <!-- Page content here -->
@@ -78,21 +78,21 @@
 
     <main class="container mx-auto overflow-x-hidden">
         <!-- Hero banner -->
-        <section class="hero bg-base-300 mb-16 py-15 md:rounded-2xl">
+        <section class="hero bg-base-300 mb-16 py-15 lg:rounded-2xl">
             <div class="hero-content text-center">
               <div class="max-w-xl gap-10 flex flex-col">
                 <h1 class="text-5xl text-sky-600 font-semibold">Depois de muita espera, ela finalmente chegou!</h1>
                 <h4 class="text-lg text-[#667085] max-w-140 text-center">O formulário para aquisição da camisa está oficialmente aberto! Com um design original e dois modelos únicos, você vai poder mostrar todo o seu orgulho de fazer parte dessa turma incrível!</h4>
                 <div class="flex justify-center gap-6">
-                    <button class="btn md:text-base flex md:px-14 md:py-8 p-6 bg-sky-600 text-white rounded-xl hover:cursor-pointer hover:scale-[1.02] transition duration-300">Ser feliz agora</button>
-                    <button class="btn bg-transparent md:text-base flex md:px-14 md:py-8 p-6 border-sky-600 text-sky-600 rounded-xl hover:cursor-pointer hover:scale-[1.02] transition duration-300">Button</button>
+                    <button class="btn lg:text-base flex lg:px-14 lg:py-8 p-6 bg-sky-600 text-white rounded-xl hover:cursor-pointer hover:scale-[1.02] transition duration-300">Ser feliz agora</button>
+                    <button class="btn bg-transparent lg:text-base flex lg:px-14 lg:py-8 p-6 border-sky-600 text-sky-600 rounded-xl hover:cursor-pointer hover:scale-[1.02] transition duration-300">Button</button>
                 </div>
               </div>
             </div>
         </section>
 
         <!-- Brands -->
-         <section id="brands" class="flex md:justify-between gap-20 items-center mb-16 px-5 overflow-x-scroll">
+         <section id="brands" class="flex lg:justify-between gap-20 items-center mb-16 px-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             <img src="assets/vectors/Brand Icon-6.png" alt="Logo Nasa">
             <img src="assets/vectors/Brand Icon-5.png" alt="Logo Spotify">
             <img src="assets/vectors/Brand Icon-4.png" alt="Logo Google">
@@ -103,8 +103,8 @@
          </section>
 
          <!-- Functions -->
-         <section id="functions" class="mb-16">
-            <div class="grid md:grid-cols-3 justify-between gap-20 mb-16 items-center grid-rows-3">
+         <section id="functions" class="mb-16 px-10">
+            <div class="grid lg:grid-cols-3 justify-between gap-20 mb-16 items-center grid-rows-3 lg:grid-rows-1">
                 <a href="#" class="hover-3d cursor-pointer group">
       
                     <!-- content -->
@@ -177,29 +177,32 @@
             </div>
 
             <div class="rounded-2xl">
-                <img src="assets/imgs/camisas.png" alt="camisas" class="w-full">
+                <picture class="w-full">
+                    <source media="(max-width: 47rem)" srcset="assets/imgs/camisas-sm.png">
+                    <img src="assets/imgs/camisas.png" alt="camisas infowebeti" class="w-full">
+                </picture>
             </div>
          </section>
 
            <!-- Métricas -->
             <section id="metrics" class="flex flex-col gap-12 items-center pb-27">
-                <div class="flex flex-col gap-6 items-center">
+                <div class="flex flex-col gap-6 items-center text-center">
                     <h1 class="text-5xl font-semibold text-sky-600">Alunos que já compraram.</h1>
                     <h4 class="text-xl text-[#667085] text-center max-w-155">Junte-se aos milhares de alunos de info que já estão vestindo a nossa camiseta linda e maravilhosa.</h4>
                 </div>
                 <!-- Números -->
-                <div class="flex justify-between w-full px-36">
+                <div class="flex justify-between w-full lg:px-36 text-center px-5">
                     <div class="text-center">
-                        <h1 class="text-sky-600 text-5xl font-semibold">234+</h1>
-                        <h4 class="text-lg text-[#667085]">Primeiro número</h4>
+                        <h1 class="text-sky-600 md:text-5xl text-4xl font-semibold">234+</h1>
+                        <h4 class="md:text-lg text-[#667085]">Primeiro número</h4>
                     </div>
                     <div class="text-center">
-                        <h1 class="text-sky-600 text-5xl font-semibold">38,903+</h1>
-                        <h4 class="text-lg text-[#667085]">Segundo número</h4>
+                        <h1 class="text-sky-600 md:text-5xl text-4xl font-semibold">38,903+</h1>
+                        <h4 class="md:text-lg text-[#667085]">Segundo número</h4>
                     </div>
                     <div class="text-center">
-                        <h1 class="text-sky-600 text-5xl font-semibold">154+</h1>
-                        <h4 class="text-lg text-[#667085]">Terceiro número</h4>
+                        <h1 class="text-sky-600 md:text-5xl text-4xl font-semibold">154+</h1>
+                        <h4 class="md:text-lg text-[#667085]">Terceiro número</h4>
                     </div>
                 </div>
             </section>
