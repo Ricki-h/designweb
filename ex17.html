@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 17</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="p-4">
+    <div x-data="{ modal: false }" class="">
+        <button @click="modal = !modal" class="btn">Show Modal</button>
+        <div x-show="modal" class="fixed inset-0 flex items-center justify-center z-10 bg-black/70">
+            <div class="bg-base-100 relative p-6 rounded flex flex-col gap-2 max-w-80" @click.outside="modal = false">
+                <button class="self-end btn" @click="modal = false">X</button>
+                <p>Conteúdo do modal Conteúdo do modal Conteúdo do modal</p>
+            </div>
+        </div>
+</body>
+</html>
