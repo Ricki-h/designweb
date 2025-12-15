@@ -9,33 +9,19 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="p-6">
-    <div x-data="{ name: 'IFRN' }">
-        <h1>Olá, <span x-text="name"></span></h1>
-    </div>
-
-    <div x-data="{ aceso: false }">
-        <button @click="aceso = !aceso">Interruptor</button>
-        luz: <span x-text="aceso ? '💡' : '🌑'"></span>
-    </div>
-    <br>
-
-    <div x-data="{ msg: '' }">
-        <input x-model="msg" type="text" placeholder="Digite...">
-        <p>Você digitou: <b x-text="msg"></b></p>
-    </div>
-
-    <div x-data="{ n1: 0, n2: 0 }">
-        <input type="number" x-model="n1">
-        +
-        <input type="number" x-model="n2">
-        = 
-        <span x-text="parseInt(n1) + parseInt(n2)"
-        :class="{
-            'text-red-500': (parseInt(n1) + parseInt(n2)) > 10,
-            'text-blue-500': (parseInt(n1) + parseInt(n2)) <= 10
-        }"></span>
-    </div>
-
-    
+    <div x-data="{ tags: ['HTML'], newTag: '' }" class=" flex flex-col max-w-50 gap-3">
+        <!-- push: inserir um novo item da lista -->
+        <input x-model="newTag" @keydown.enter="tags.push(newTag); newTag=''">
+        <div  class="flex gap-2">
+            <!-- Lista os itens em uma lista de dados composta por manipulação -->
+            <template x-for="tag in tags">
+                <span class="badge badge-primary">
+                    <span x-text="tag" class="font-medium"></span>
+                    <button @click="tags = tags.filter(t => t !== tag)" class="text-xs hover:cursor-pointer">X</button>
+                </span>
+            </template>
+            
+        </div>
+    </div> 
 </body>
 </html>
