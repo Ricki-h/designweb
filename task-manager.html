@@ -18,7 +18,7 @@
 
         <div class="flex gap-4">   
             <input x-model="$store.tasks.newItem" @keyup.enter="$store.tasks.add()" type="text" placeholder="Nova tarefa..." class="p-2 rounded-lg outline-none bg-base-200 w-full border border-gray-300 focus:ring-3 focus:ring-violet-500">
-            <button class="bg-violet-500 text-base-100 px-3 py-[10px] rounded-md hover:cursor-pointer hover:bg-violet-600"><i class="fa-solid fa-check"></i></i></button>
+            <button @click="$store.tasks.add()" class="bg-violet-500 text-base-100 px-3 py-[10px] rounded-md hover:cursor-pointer hover:bg-violet-600"><i class="fa-solid fa-check"></i></i></button>
         </div>
         <div class="flex gap-3">
             <button @click="$store.tasks.filter = 'all'" :class="$store.tasks.filter === 'all' ? 'bg-violet-600 text-white' : 'bg-base-300 text-black'" class="px-3 py-1 font-medium rounded-full hover:cursor-pointer">Todas</button>
@@ -29,12 +29,12 @@
         <ul class="flex flex-col gap-2">
             <template x-for="task in $store.tasks.filtered" :key="task.id">
                 <li @click="task.done = !task.done" class="p-3 hover:cursor-pointer flex items-center gap-3 border rounded-lg border-gray-200 hover:border-gray-400 transition duration-300 group">
-                    <div :class="task.done ? 'bg-green-500 text-white border-none' : 'bg-none'" class="h-5 w-5 border rounded border-gray-400 hover:cursor-pointer flex items-center justify-center text-xs">
+                    <div :class="task.done ? 'bg-violet-500 text-white border-none' : 'bg-none'" class="h-5 w-5 border rounded border-gray-400 hover:cursor-pointer flex items-center justify-center text-xs">
                         <i x-show="task.done" class="fa-solid fa-check"></i>
                     </div>
                     <span x-text="task.text" :class="task.done ? 'line-through text-gray-400' : ''"></span>
-                    <button class="ml-auto hover:cursor-pointer hover:text-red-500 text-sm opacity-0 group-hover:">
-                        <i class="fa-regular fa-trash-can"></i>
+                    <button @click="$store.tasks.taskList = $store.tasks.taskList.filter(t => t.id !== task.id)" class="ml-auto hover:cursor-pointer hover:text-red-500 text-sm opacity-0 group-hover:opacity-100 transition duration-300 text-gray-400">
+                        <i class=" fa-regular fa-trash-can"></i>
                     </button>
                 </li>
             </template>
