@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <main x-data class="p-6 max-w-200 flex flex-col gap-4">
+        <div class="flex items-center justify-between">
+            <h1 class="text-2xl font-bold">Minhas tarefas</h1>
+            <span x-text="$store.tasks.taskList.filter(t => !t.done).length + ' pendentes'" class="text-xs font-bold bg-violet-200 text-violet-900 px-2 py-1 rounded-full"></span>
+        </div>
+
+        <div class="flex gap-4">   
+            <input x-model="$store.tasks.newItem" @keyup.enter="$store.tasks.add()" type="text" placeholder="Nova tarefa..." class="p-2 rounded-lg outline-none bg-base-200 w-full border border-gray-300 focus:ring-3 focus:ring-violet-500">
+            <button class="bg-violet-500 text-base-100 px-3 py-[10px] rounded-md hover:cursor-pointer hover:bg-violet-600"><i class="fa-solid fa-check"></i></i></button>
+        </div>
+        <div class="flex gap-3">
+            <button @click="$store.tasks.filter = 'all'" :class="$store.tasks.filter === 'all' ? 'bg-violet-600 text-white' : 'bg-base-300 text-black'" class="px-3 py-1 font-medium rounded-full hover:cursor-pointer">Todas</button>
+            <button @click="$store.tasks.filter = 'pending'" :class="$store.tasks.filter === 'pending' ? 'bg-violet-600 text-white' : 'bg-base-300 text-black'" class="px-3 py-1 bg-base-300 font-medium text-black rounded-full hover:cursor-pointer">Pendentes</button>
+            <button @click="$store.tasks.filter = 'done'" :class="$store.tasks.filter === 'done' ? 'bg-violet-600 text-white' : 'bg-base-300 text-black'" class="px-3 py-1 bg-base-300 font-medium text-black rounded-full hover:cursor-pointer">Feitas</button>
+        </div>
+        
+        <ul class="flex flex-col gap-2">
+            <template x-for="task in $store.tasks.filtered" :key="task.id">
+                <li @click="task.done = !task.done" class="p-3 hover:cursor-pointer flex items-center gap-3 border rounded-lg border-gray-200 hover:border-gray-400 transition duration-300 group">
+                    <div :class="task.done ? 'bg-green-500 text-white border-none' : 'bg-none'" class="h-5 w-5 border rounded border-gray-400 hover:cursor-pointer flex items-center justify-center text-xs">
+                        <i x-show="task.done" class="fa-solid fa-check"></i>
+                    </div>
+                    <span x-text="task.text" :class="task.done ? 'line-through text-gray-400' : ''"></span>
+                    <button class="ml-auto hover:cursor-pointer hover:text-red-500 text-sm opacity-0 group-hover:">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </button>
+                </li>
+            </template>
+        </ul>
+    </main>
+
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('tasks', {
+                newItem: '',
+                filter: 'all',
+                taskList: [
+                    {id: 1, text: 'Aprender Tailwind.css', done: true},
+                    {id: 2, text: 'Aprender Alpine.js', done: false}
+                ],
+
+                get filtered() {
+                    if (this.filter === 'done') {
+                        return this.taskList.filter(t => t.done)
+                    };
+                    if (this.filter === 'pending') {
+                        return this.taskList.filter(t => !t.done)
+                    };
+                    return this.taskList;
+                },
+
+                add() {
+                    if (!this.newItem) return;
+                    this.taskList.push({id: Date.now(), text: this.newItem, done: false});
+                    this.newItem = '';
+                }
+            })
+        })
+    </script>
+</body>
+</html>
