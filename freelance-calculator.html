@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="flex justify-center items-center min-h-screen">
+    <main x-data="{ 
+        newService: '',
+        newValue: '',
+        services: [{name: 'Logo Design', value: 500}, {name: 'Website', value: 1500}],
+        add() {
+            if (!this.newService || !this.newValue) return;
+            this.services.push({name: this.newService, value: this.newValue});
+            this.newService = ''
+            this.newValue = ''
+        },
+        get total() {
+            let soma = 0
+            this.services.forEach(service => {
+                soma += Number(service.value)
+            })
+            return soma;
+        }
+     }" class="p-6 border border-gray-200 shadow flex flex-col gap-4 w-100 rounded-xl">
+        <div class="flex items-center gap-4">
+            <div class="text-green-700 w-14 h-14 flex items-center justify-center bg-green-100 rounded-full text-xl">
+                <i class="fa-solid fa-dollar-sign"></i>
+            </div>
+            <h4 class="font-medium text-lg">Orçamento #001</h4>
+        </div>
+
+        <hr class="border-gray-200">
+        <div class="flex flex-col gap-2">
+            <div class="flex justify-between">
+                <input x-model="newService" type="text" class="outline-none border-gray-300 bg-gray-100 rounded-md w-55 px-2 py-1" placeholder="Digite o serviço">
+                <input x-model.number="newValue" type="text" class="outline-none border-gray-300 bg-gray-100 rounded-md w-30 px-2 py-1" placeholder="Digite o valor">
+            </div>
+            <button @click="add()" class="flex justify-center w-full items-center p-2 bg-green-400 font-bold text-lg rounded-xl hover:cursor-pointer hover:bg-green-500">Adicionar</button>
+        </div>
+        <ul class="flex flex-col gap-2">
+            <template x-for="service in services">
+                <li class="flex justify-between p-2 bg-gray-100 rounded-lg">
+                    <span x-text="service.name"></span>
+                    <span x-text="'R$ ' + service.value" class="font-bold"></span>
+                </li>
+            </template>
+        </ul>
+
+        <div class="p-2 bg-slate-800 rounded-md flex items-center justify-between">
+            <span class="text-slate-400 font-medium">TOTAL</span>
+            <span class="text-green-400 font-bold text-lg" x-text="'R$ ' + total"></span>
+        </div>
+    </main>
+</body>
+</html>
